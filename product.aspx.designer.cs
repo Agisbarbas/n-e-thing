@@ -22,6 +22,15 @@ namespace nthing {
         protected global::System.Web.UI.WebControls.FormView ProductView;
         
         /// <summary>
+        /// MessLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label MessLabel;
+        
+        /// <summary>
         /// SqlProduct control.
         /// </summary>
         /// <remarks>
@@ -76,48 +85,66 @@ namespace nthing {
         protected global::System.Web.UI.HtmlControls.HtmlInputText prodgui;
         
         /// <summary>
-        /// usrgui control.
+        /// prodId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText usrgui;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText prodId;
         
         /// <summary>
-        /// bidbid control.
+        /// usrname control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText bidbid;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText usrname;
         
         /// <summary>
-        /// hgstBid control.
+        /// prodAmnt control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText hgstBid;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText prodAmnt;
         
         /// <summary>
-        /// hgstBider control.
+        /// prodPrice control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText hgstBider;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText prodPrice;
         
         /// <summary>
-        /// LogName control.
+        /// UpdatePanel2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText LogName;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
+        
+        /// <summary>
+        /// RelatedList control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DataList RelatedList;
+        
+        /// <summary>
+        /// SqlRelated control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlRelated;
     }
 }
