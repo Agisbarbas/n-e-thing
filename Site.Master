@@ -1,0 +1,149 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="nthing.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>n-e-thing</title>
+    <meta content="n-e-thing" name="TITLE" />
+    <meta name="KEYWORDS" content="n-e-thing" />
+    <meta name="DESCRIPTION" content="n-e-thing - Runtime-Terror" />
+    <meta http-equiv="CONTENT-LANGUAGE" content="EL" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta content="http://schemas.microsoft.com/intellisense/ie5" name="vs_targetSchema" />
+    <meta name="Author" content="Runtime-Terror" />
+    <meta name="Copyright" content="2020 © Runtime-Terror" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link href="layout/styles/main.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="layout/styles/mediaqueries.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="layout/scripts/responsiveslides.js-v1.53/responsiveslides.css" rel="stylesheet" type="text/css" media="all"/>
+     <link href="layout/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+     <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+   <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+
+        <div class="wrapper row1">
+            <header id="header" class="full_width clear" style="width: 1200px; height: 100px;">
+                <div id="hgroup">
+                    <img src="images/demo/newlogo.png" style="height: 80px" />
+                    <h2>Where you can buy anything</h2>
+
+                </div>
+                <div id="header-contact">
+                    <asp:LoginView ID="LoginView1" runat="server">
+                        <LoggedInTemplate>
+                            <asp:Label ID="Label3" runat="server" Font-Names="Tahoma" Font-Size="9pt" Text="Καλώς ήρθατε"></asp:Label>&nbsp;<asp:LoginName
+                                ID="LoginName1" runat="server"
+                                Font-Names="Tahoma" Font-Size="9pt" Font-Underline="False" />
+                            &nbsp; -&nbsp;<asp:LoginStatus ID="LoginStatus1" runat="server" Font-Names="Tahoma" Font-Size="9pt"
+                                Font-Underline="False" LogoutPageUrl="~/default.aspx" LogoutAction="Redirect" />
+                            &nbsp;<br />
+                        </LoggedInTemplate>
+                        <AnonymousTemplate>
+                            <asp:Login ID="Login1" runat="server">
+                                <LayoutTemplate>
+                                    <table border="0" style="border-collapse: collapse">
+                                        <tr>
+                                            <td>&nbsp;<asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName"
+                                                Font-Names="Tahoma" Font-Size="9pt" ForeColor="Black">Εισαγωγή Μέλους :</asp:Label></td>
+                                            <td></td>
+                                            <td>
+                                                <asp:TextBox ID="UserName" runat="server" Width="90px"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="UserNameRequired"
+                                                    runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required."
+                                                    ToolTip="User Name is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
+                                            </td>
+                                            <td>
+                                                <asp:TextBox ID="Password" runat="server" TextMode="Password"
+                                                    Width="90px"></asp:TextBox>
+                                                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
+                                                    ErrorMessage="Password is required." ToolTip="Password is required."
+                                                    ValidationGroup="Login1">*</asp:RequiredFieldValidator>
+                                            </td>
+                                            <td>&nbsp;</td>
+                                        </tr>
+                                    </table>
+                                </LayoutTemplate>
+                            </asp:Login>
+                        </AnonymousTemplate>
+                    </asp:LoginView>
+
+
+                </div>
+            </header>
+        </div>
+        <div class="wrapper row2">
+            <nav id="topnav">
+                <ul class="clear">
+                    <li class="active"><a href="default.aspx" title="Homepage">Homepage</a></li>
+                    <li><a class="drop" href="#" title="Products">Products</a>
+                        <ul>
+                            <li><a href="categories.aspx?cid=2&cname=Technology" title="Technology">Technology</a></li>
+                            <li><a href="categories.aspx?cid=8&cname=Fashion" title="Fashion">Fashion</a></li>
+                            <li><a href="categories.aspx?cid=3&cname=Sports and Hobbies" title="Sports & Hobbies">Sports & Hobbies</a></li>
+                            <li><a href="categories.aspx?cid=7&cname=House and Garden" title="House & Garden">House & Garden</a></li>
+                            <li><a href="categories.aspx?cid=5&cname=Auto - Moto" title="Auto - Moto">Auto - Moto</a></li>
+                            <li><a href="categories.aspx?cid=4&cname=Health and Beauty" title="Health & Beauty">Health & Beauty</a></li>
+                        </ul>
+                    </li>
+
+                    <li><a class="drop" href="#" title="Profile">My Proflie</a>
+                        <ul>
+                            <li class="active"><a href="AccInfo.aspx" title="My Profile">Account Information</a></li>
+                            <li class="active"><a href="#" title="Sell">I Want To Sell...</a></li>
+                        </ul>
+                    </li>
+                    <li class="active"><a href="About.aspx" title="Our Team">Our Team</a></li>
+
+                    <li class="active"><a href="Cart.aspx" title="Cart">Cart </a></li>
+
+                </ul>
+            </nav>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <div class="wrapper row2">
+            <div id="footer" class="clear">
+                <div class="one_third first">
+                    <h2 class="footer_title">Footer Navigation</h2>
+                    <nav class="footer_nav">
+                        <ul class="nospace">
+                            <li><a href="default.aspx" style="color: #FF7417">Home Page</a></li>
+                            <li><a href="About.aspx" style="color: #FF7417">Meet the Team</a></li>
+                            <li><a href="Profile.aspx" style="color: #FF7417">Profile</a></li>
+                            <li><a href="Cart.aspx" style="color: #FF7417">Cart</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="one_third">
+                <h2 class="footer_title">Contact Us</h2>
+                <p>info@nthing.com</p>
+
+            </div>
+        </div>
+        <div class="wrapper row4">
+            <div id="copyright" class="clear">
+
+                <p class="fl_left">Copyright &copy; <%: DateTime.Now.Year %>  - All Rights Reserved  <a href="#">n-e-thing</a></p>
+
+            </div>
+        </div>
+<!-- Scripts -->
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.min.js"></script>
+<script>window.jQuery || document.write('<script src="layout/scripts/jquery-latest.min.js"><\/script>\
+<script src="layout/scripts/jquery-ui.min.js"><\/script>')</script>
+<script>jQuery(document).ready(function($){ $('img').removeAttr('width height'); });</script>
+<script src="layout/scripts/responsiveslides.js-v1.53/responsiveslides.min.js"></script>
+<script src="layout/scripts/jquery-mobilemenu.min.js"></script>
+<script src="layout/scripts/custom.js"></script>
+   
+    </form>
+</body>
+</html>
