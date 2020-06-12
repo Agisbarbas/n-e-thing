@@ -91,12 +91,11 @@
             <div id="tab-2" class="tab-content clear">
               <article class="clear push20">
                 <div class="imgl"><img src="images/demo/50x50.gif" alt=""/></div>
-                <h2 class="font-medium nospace"><a href="#" style="color: #FF7417">Headline Text</a></h2>
-                <p class="nospace">Integer imperdiet vestibulum leo ut tincidunt in sagittis.</p>
+               
               </article>
               <article class="clear">
                 <h2 class="font-medium nospace"><a href="#" style="color: #FF7417">Headline Text</a></h2>
-                <p class="nospace">Integer imperdiet vestibulum leo ut tincidunt. In sagittis diam ut leo convallis vel rutrum mauris ullamcorper.</p>
+               
               </article>
             </div>
             
