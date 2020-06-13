@@ -1,5 +1,13 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="nthing.Cart" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" EnableViewState="true"  AutoEventWireup="true" ValidateRequest="false"  CodeBehind="Cart.aspx.cs" Inherits="nthing.Cart" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        function Checkout() {
+            alert("Your payment is confirmed... Thank you for the participation!");
+            var delCart = document.getElementById('<%=EmptyCartBtn.ClientID%>');
+            delCart.click();
+        }
+
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
@@ -34,6 +42,7 @@
                                         
                                           </ItemTemplate>
                                       </asp:DataList>
+                                      <asp:Label ID="TotalLabel" runat="server" Text="" ForeColor="#990033" Font-Size="14" Font-Bold="True"></asp:Label>
                                       <asp:SqlDataSource ID="SqlCart" runat="server"
                                           ConnectionString="<%$ ConnectionStrings:DefaultConnection %>"
                                           ProviderName="<%$ ConnectionStrings:DefaultConnection.ProviderName %>" 
@@ -47,10 +56,11 @@
                                       </asp:SqlDataSource>
                                        <div style="height: 0px">
                                        <input id="prodgui" type="text" runat="server" value="" style="visibility: hidden" />
-                                           <input id="prodId" type="text" runat="server" value="" style="visibility: hidden" />
+                                       <input id="prodId" type="text" runat="server" value="" style="visibility: hidden" />
                                       <input id="usrname" type="text" runat="server" value="" style="visibility: hidden" />
                                       <input id="prodAmnt" type="text" runat="server" style="visibility: hidden" value="0" />
-                                   <input id="prodPrice" type="text" runat="server" style="visibility: hidden" value="0" />  
+                                   <input id="prodPrice" type="text" runat="server" style="visibility: hidden" value="0" /> 
+                                           <input id="EmptyCartBtn" runat="server" onserverclick ="EmptyCartBtn_ServerClick" style="visibility: hidden" type="button" value="button" />        
                                               </div>
                                      
                                   </ContentTemplate>
@@ -74,10 +84,9 @@
               <div class="panel-heading">
 
                   <i class="fa fa-check-square-o"></i> Procceed to checkout...
-                        <a href="#" class="list-group-item">
-                                                <span>Checkout with Bank Transfer</span> 
-                                                 
-                                              </a>
+                        <a href="#" onclick="Checkout()"  class="list-group-item"><span>Checkout with Bank Transfer</span></a>
+                       <a href="#"  onclick="Checkout()" class="list-group-item"><span>Checkout with Credit/Debit Card</span></a>
+                       <a href="#"  onclick="Checkout()" class="list-group-item"><span>Checkout with Paypal</span></a>
               </div>
               <!-- /.panel-heading -->
               <div class="panel-body">

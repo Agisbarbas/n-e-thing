@@ -1,58 +1,99 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AccInfo.aspx.cs" Inherits="nthing.Profile" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master"  EnableViewState="true"  AutoEventWireup="true" ValidateRequest="false"  CodeBehind="AccInfo.aspx.cs" Inherits="nthing.AccInfo" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link rel="stylesheet" type="text/css" href="StarRating.css">
-    <div class="wrapper row3">
+   <div class="wrapper row3">
   <div id="container">
-    <!-- ################################################################################################ -->
-    <section class="clear">
-      <h1 style="font-size:40px">Profile</h1>
-   
+  
       <figure class="imgl boxholder"><img src="../images/demo/120x120.gif" alt=""/></figure>
         <br />
-        <h1> UserName ‏‏‎‎‏‏‎</h1> ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ 
-        <p>Σε αυτή την παράγραφο θα είναι η περιγραφή του χρήστη</p>
+        <h2>
+            <asp:Label ID="usrLabel" runat="server"></asp:Label>  ‏‏‎‎‏‏‎</h2> ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎‏‏‎ 
+        <p></p>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
-.checked {
-  color: orange;
-}
-</style>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        
-        
-<h3>Feedback Rating</h3>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star checked"></span>
-<span class="fa fa-star"></span>
-<span class="fa fa-star"> </span>
-    <p>3-Star Rating ‏‏‎  ‎‏‏‎ ‎(69 Reviews) ‎‏‏‎ </p>
-    </section>
+      
+  <div class="two_third first">
+    <div id="portfolio">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Feedback Rating
+                       
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
 
-      <h1>Items for sale (1)</h1>
-      <figure class="imgl boxholder"><img src="../images/demo/120x120.gif" alt="">‏‏‎‎</figure>
-      <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-      <a href="#" style="font-size:20px; color: #FF7417;">‏‏‎ ‎‏‏‎ ‎‏‏‎ ‎Item Name</a>
-        <br />
-        <br />
-        <br />
-        <br />
+                <div class="list-group">
+
+                    <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+
+                        <ContentTemplate>
+
+                            <asp:DataList ID="ReviewsList" runat="server">
+                                <ItemTemplate>
+                                    <a href="#" class="list-group-item">
+                                        <span>Rating <i class="fa fa-star fa-fw" style="color: orangered"></i>(<%# Eval("Rating") %>)</span>
+                                        <span>added on <%#Eval("CreatedOn") %></span>
+                                        <br />
+                                        <div class="alert alert-info"><%#Eval("UserReview") %></div>
+                                    </a>
+
+                                </ItemTemplate>
+                            </asp:DataList>
+
+                       </ContentTemplate>
+
+                    </asp:UpdatePanel>
+
+                    <asp:SqlDataSource ID="SqlRate" runat="server"
+                        ConnectionString="<%$ ConnectionStrings:DefaultConnection %>"
+                        ProviderName="<%$ ConnectionStrings:DefaultConnection.ProviderName %>"></asp:SqlDataSource>
+                </div>
+
+
+            </div>
+            <!-- /.panel-body -->
+        </div>
+  
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Items for Sale
+                       
+            </div>
+
+            <div class="panel-body">
+                <asp:DataList ID="CategoryItems" runat="server" RepeatColumns="1" RepeatDirection="Vertical" RepeatLayout="Table">
+                    <ItemTemplate>
+                        <article class="clear push20">
+
+                            <figure class="post-Catimage">
+                                <img src="<%#Eval("prodPhoto") %>" alt="">
+                            </figure>
+                            <header>
+                                <h2 class="blog-post-title"><a href="product.aspx?pid=<%#Eval("ProductGuid") %>"><%#Eval("Name") %></a></h2>
+                                <div class="blog-post-meta">
+                                    <ul>
+                                        <li class="blog-post-date">Date created : <%#Eval("CreatedOn", "{0:d}") %> </li>
+
+                                    </ul>
+                                </div>
+                            </header>
+                            <p><%#Eval("ShortDescription") %></p>
+
+
+                        </article>
+                    </ItemTemplate>
+                </asp:DataList>
+                <asp:SqlDataSource ID="SqlProduct" runat="server" ConnectionString="<%$ ConnectionStrings:DefaultConnection %>"
+                    ProviderName="<%$ ConnectionStrings:DefaultConnection.ProviderName %>"></asp:SqlDataSource>
+
+
+            </div>
+        </div>
+
+     </div>
+   </div>
    
-    <!-- ################################################################################################ -->
+
     <div class="clear"></div>
   </div>
 </div>

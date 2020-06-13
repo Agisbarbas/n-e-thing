@@ -137,7 +137,7 @@
                                           <InsertParameters>
                                               <asp:ControlParameter ControlID="prodgui" Name="guid" PropertyName="Value" />
                                               <asp:ControlParameter ControlID="usrgui" Name="usr" PropertyName="Value" />
-                                              <asp:ControlParameter ControlID="bidbid" Name="bid" PropertyName="Value" DbType="Int16" />
+                                              <asp:ControlParameter ControlID="bidbid" Name="bid" PropertyName="Value" DbType="Int32" />
                                           </InsertParameters>
                                           <SelectParameters>
                                               <asp:QueryStringParameter Name="apid" QueryStringField="pid" />

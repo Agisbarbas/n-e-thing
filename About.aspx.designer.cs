@@ -10,6 +10,6 @@
 namespace nthing {
     
     
-    public partial class Profile {
+    public partial class About {
     }
 }

@@ -284,6 +284,8 @@
     <Content Include="layout\styles\fonts\font-awesome\font\fontawesome-webfont.ttf" />
     <Content Include="layout\styles\fonts\font-awesome\font\fontawesome-webfont.woff" />
     <Content Include="layout\styles\fonts\font-awesome\font\FontAwesome.otf" />
+    <Content Include="layout\styles\modal.css" />
+    <Content Include="layout\styles\star.css" />
     <Content Include="wtest.aspx" />
     <Content Include="layout\bootstrap\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="layout\bootstrap\fonts\glyphicons-halflings-regular.ttf" />

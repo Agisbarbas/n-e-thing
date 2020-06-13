@@ -15,6 +15,8 @@
     <meta name="Copyright" content="2020 © Runtime-Terror" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <link href="layout/styles/main.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="layout/styles/modal.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="layout/styles/star.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="layout/styles/mediaqueries.css" rel="stylesheet" type="text/css" media="all"/>
     <link href="layout/scripts/responsiveslides.js-v1.53/responsiveslides.css" rel="stylesheet" type="text/css" media="all"/>
      <link href="layout/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
@@ -34,9 +36,10 @@
 
                 </div>
                 <div id="header-contact">
+
                     <asp:LoginView ID="LoginView1" runat="server">
                         <LoggedInTemplate>
-                            <asp:Label ID="Label3" runat="server" Font-Names="Tahoma" Font-Size="9pt" Text="Καλώς ήρθατε"></asp:Label>&nbsp;<asp:LoginName
+                            <asp:Label ID="Label3" runat="server" Font-Names="Tahoma" Font-Size="9pt" Text="Welcome "></asp:Label>&nbsp;<asp:LoginName
                                 ID="LoginName1" runat="server"
                                 Font-Names="Tahoma" Font-Size="9pt" Font-Underline="False" />
                             &nbsp; -&nbsp;<asp:LoginStatus ID="LoginStatus1" runat="server" Font-Names="Tahoma" Font-Size="9pt"
@@ -44,32 +47,9 @@
                             &nbsp;<br />
                         </LoggedInTemplate>
                         <AnonymousTemplate>
-                            <asp:Login ID="Login1" runat="server">
-                                <LayoutTemplate>
-                                    <table border="0" style="border-collapse: collapse">
-                                        <tr>
-                                            <td>&nbsp;<asp:Label ID="UserNameLabel" runat="server" AssociatedControlID="UserName"
-                                                Font-Names="Tahoma" Font-Size="9pt" ForeColor="Black">Εισαγωγή Μέλους :</asp:Label></td>
-                                            <td></td>
-                                            <td>
-                                                <asp:TextBox ID="UserName" runat="server" Width="90px"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="UserNameRequired"
-                                                    runat="server" ControlToValidate="UserName" ErrorMessage="User Name is required."
-                                                    ToolTip="User Name is required." ValidationGroup="Login1">*</asp:RequiredFieldValidator>
-                                            </td>
-                                            <td>
-                                                <asp:TextBox ID="Password" runat="server" TextMode="Password"
-                                                    Width="90px"></asp:TextBox>
-                                                <asp:RequiredFieldValidator ID="PasswordRequired" runat="server" ControlToValidate="Password"
-                                                    ErrorMessage="Password is required." ToolTip="Password is required."
-                                                    ValidationGroup="Login1">*</asp:RequiredFieldValidator>
-                                            </td>
-                                            <td>&nbsp;</td>
-                                        </tr>
-                                    </table>
-                                </LayoutTemplate>
-                            </asp:Login>
-                        </AnonymousTemplate>
+                            <span>You are not registered member...<a href="Account/Register.aspx">Register as a new member</a> </span><br />
+                            <span>Already registered?...<a href="Account/login.aspx">Sign in here</a> </span>
+                           </AnonymousTemplate>
                     </asp:LoginView>
 
 

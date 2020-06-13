@@ -31,6 +31,15 @@ namespace nthing {
         protected global::System.Web.UI.WebControls.DataList CartItems;
         
         /// <summary>
+        /// TotalLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TotalLabel;
+        
+        /// <summary>
         /// SqlCart control.
         /// </summary>
         /// <remarks>
@@ -83,5 +92,14 @@ namespace nthing {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText prodPrice;
+        
+        /// <summary>
+        /// EmptyCartBtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputButton EmptyCartBtn;
     }
 }

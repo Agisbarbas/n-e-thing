@@ -26,24 +26,31 @@ namespace nthing
         {
             string calledID;
             calledID = Request.Params["pid"];
-            Load_Product(calledID);
+         
 
+            strConn = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+            Load_Product(calledID);
             prodgui.Value = calledID;
             userName = User.Identity.Name;
             usrname.Value = userName;
-             Load_Cart(userName);
 
-            strConn = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-            if (!Page.IsPostBack)
+            Load_Cart(userName);
+
+            if (!IsPostBack)
             {
+                
                 SqlConnection cnn = new SqlConnection(strConn);
                 SqlCommand cmd = new SqlCommand("SELECT Price FROM [dbo].[nthing_Store_Product] where ProductGuid = '" + calledID + "'", cnn);
+                SqlCommand cmd2 = new SqlCommand("SELECT UserName FROM [dbo].[vw_nthing_UsrProducts] where ProductGuid = '" + calledID + "'", cnn);
+
                 cnn.Open();
                 string retval = cmd.ExecuteScalar().ToString();
+                string produsr = cmd2.ExecuteScalar().ToString();
+
                 cnn.Close();
 
-                prodPrice.Value = retval;
-
+               prodPrice.Value = retval;
+               Produsrname.Value = produsr;
             }
 
 
@@ -52,7 +59,7 @@ namespace nthing
         protected void Load_Product(string pguid)
         {
 
-            SqlProduct.SelectCommand = "SELECT * FROM [dbo].[nthing_Store_Product] where ProductGuid = '" + pguid + "'";
+            SqlProduct.SelectCommand = "SELECT * FROM [dbo].[vw_nthing_UsrProducts] where ProductGuid = '" + pguid + "'";
             SqlProduct.DataBind();
             ProductView.DataSource = SqlProduct;
             ProductView.DataBind();
@@ -85,11 +92,13 @@ namespace nthing
             prodAmnt.Value = pramount.ToString();
 
             MessLabel.Text = "";
+
             SqlCart.InsertCommandType = SqlDataSourceCommandType.Text;
-           SqlCart.Insert();
+            SqlCart.Insert();
+            
             MessLabel.Text = "Product added to your cart!";
 
-         
+            Load_Cart(userName);
 
             SqlConnection cnn = new SqlConnection(strConn);
             SqlCommand cmd = new SqlCommand("SELECT ProductId FROM [dbo].[nthing_Store_Product] where ProductGuid = '" + prodgui.Value + "'", cnn);
@@ -98,15 +107,55 @@ namespace nthing
             cnn.Close();
             prodId.Value = retval;
 
-   prodgui.Value = "";
-            usrname.Value = "";
-            prodAmnt.Value = "";
+          
 
             SqlRelated.SelectCommand = "SELECT * FROM [dbo].[vw_nthing_Crossell] where ProductId = " + int.Parse (prodId.Value) ;
             SqlRelated.DataBind();
             RelatedList.DataSource = SqlRelated;
             RelatedList.DataBind();
 
+                prodgui.Value = "";
+                usrname.Value = "";
+                prodAmnt.Value = "";
+        }
+
+       
+
+        protected void ReviewBtn_ServerClick(object sender, EventArgs e)
+        {
+            string prodUsrName;
+            prodUsrName = Produsrname.Value;
+
+            string rev;
+            rev = reviewTxt.Value.Replace("'", "");
+
+            if (string.IsNullOrEmpty(rev)){
+                rev = "No comment";
+            }
+
+
+            int star=1;
+            star =int.Parse(UsrStar.Value);
+
+
+
+            SqlConnection cnn = new SqlConnection(strConn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[nthing_Store_userRating]([UserName],[Rating],[UserReview]) values('" + prodUsrName + "'," + star + ",'" + rev + "')", cnn);
+            SqlCommand cmd2 = new SqlCommand("SELECT abs(AVG([Rating])) as rating FROM [datanthing].[dbo].[nthing_Store_userRating] where [UserName] = '" + prodUsrName + "'", cnn);
+            SqlCommand cmd22 = new SqlCommand("SELECT count([Rating]) as reviews FROM [datanthing].[dbo].[nthing_Store_userRating] where [UserName] = '" + prodUsrName + "'", cnn);
+
+
+            cnn.Open();
+            cmd.ExecuteNonQuery();
+
+            int avgRate;
+            avgRate = int.Parse(cmd2.ExecuteScalar().ToString());
+            int reviews;
+            reviews = int.Parse(cmd22.ExecuteScalar().ToString());
+            SqlCommand cmd3 = new SqlCommand("Update [dbo].[AspNetUsers] Set [UserRating] = " + avgRate  + ",[UserReviews] =" + reviews  + " where [UserName] = '" + prodUsrName + "'", cnn);
+            cmd3.ExecuteNonQuery();
+
+           cnn.Close();
 
         }
     }

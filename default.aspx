@@ -20,21 +20,21 @@
           <li class="one_third first">
             <article>
               <div class="push20"><img src="images/demo/Technology.jpg" alt=""/></div>
-              <h2 class="font-medium nospace"><a href="Technology.aspx" style="color: #FF7417">Technology</a></h2>
+              <h2 class="font-medium nospace"><a href="categories.aspx?cid=2&cname=Technology" style="color: #FF7417">Technology</a></h2>
               <p class="nospace">Σε αυτή την κατηγορία εντάσσεται μια μεγάλη ποικιλία από ηλεκτρονικά είδη, όπως κινητά Smartphones, tablets, smart tvs,  laptops, κάμερες, smartwatches, αλλά και πολλά επιπλέον αξεσουάρ τεχνολογίας.</p>
             </article>
           </li>
           <li class="one_third">
             <article>
               <div class="push20"><img src="images/demo/Sports & Hobbies.jpg" alt=""/></div>
-              <h2 class="font-medium nospace"><a href="Sports.aspx" style="color: #FF7417">Sports & Hobbies</a></h2>
+              <h2 class="font-medium nospace"><a href="categories.aspx?cid=3&cname=Sports and Hobbies" style="color: #FF7417">Sports & Hobbies</a></h2>
               <p class="nospace">Αποτελεί όλα τα απαραίτητα εξαρτήματα που χρειάζεται κανείς προκειμένου να μπορεί να συμμετάσχει σε ένα άθλημα, αλλά και όλα εκείνα που μπορούν να χρησιμοποιηθούν στον ελεύθερο χρόνο ως χόμπι.</p>
             </article>
           </li>
           <li class="one_third">
             <article>
               <div class="push20"><img src="images/demo/Fashion.jpg" alt=""/></div>
-              <h2 class="font-medium nospace"><a href="Fashion.aspx" style="color: #FF7417">Fashion</a></h2>
+              <h2 class="font-medium nospace"><a href="categories.aspx?cid=8&cname=Fashion" style="color: #FF7417">Fashion</a></h2>
               <p class="nospace">Εδώ θα ανακαλύψετε μια τεράστια συλλογή από ρούχα, παπούτσια, τσάντες κοσμήματα και αξεσουάρ για τη γυναίκα, τον άνδρα αλλά και το παιδί.</p>
             </article>
           </li>
@@ -43,21 +43,21 @@
           <li class="one_third first">
             <article>
               <div class="push20"><img src="images/demo/health & Beauty.jpg" alt=""/></div>
-              <h2 class="font-medium nospace"><a href="Health.aspx" style="color: #FF7417">Health & Beauty</a></h2>
+              <h2 class="font-medium nospace"><a href="categories.aspx?cid=4&cname=Health and Beauty" style="color: #FF7417">Health & Beauty</a></h2>
               <p class="nospace">Μπορείτε να ανακαλύψετε τα πάντα για τον κόσμο της υγείας και ομορφιάς, μέσα από προϊόντα διατροφής, καλλυντικά, αρώματα, βρεφική περιποίηση και αξεσουάρ.</p>
             </article>
           </li>
           <li class="one_third">
             <article>
               <div class="push20"><img src="images/demo/House & Garden.jpg" alt=""/></div>
-              <h2 class="font-medium nospace"><a href="House.aspx" style="color: #FF7417">House & Garden</a></h2>
+              <h2 class="font-medium nospace"><a href="categories.aspx?cid=7&cname=House and Garden" style="color: #FF7417">House & Garden</a></h2>
               <p class="nospace">Εδώ θα βρείτε μια τεράστια ποικιλία από οικιακές συσκευές, είδη διακόσμησης χώρου, έπιπλα αλλά και είδη κήπου για διαμόρφωση του εξωτερικού χώρου.</p>
             </article>
           </li>
           <li class="one_third">
             <article>
               <div class="push20"><img src="images/demo/Auto - Moto.jpg" alt=""/></div>
-              <h2 class="font-medium nospace"><a href="Auto.aspx" style="color: #FF7417">Auto - Moto</a></h2>
+              <h2 class="font-medium nospace"><a href="categories.aspx?cid=5&cname=Auto - Moto" style="color: #FF7417">Auto - Moto</a></h2>
               <p class="nospace">Είναι μια κατηγορία που αποτελείται τόσο από αυτοκίνητα, όσο και μοτοσυκλέτες, αλλά και από οποιοδήποτε αξεσουάρ πρώτης ανάγκης ή και περιποίησης μπορεί να συσχετιστεί με αυτά.</p>
             </article>
           </li>
